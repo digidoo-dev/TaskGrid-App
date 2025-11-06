@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskGrid_App.Views.AddSeparator"
+             Title="Add Separator">
+    <VerticalStackLayout VerticalOptions="Center" 
+                         Padding="20"
+                         Spacing="10"
+                         MaximumWidthRequest="500">
+        <Label 
+            Text=""
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            x:Name="titleLabel"/>
+        <Label Text="Separator Name" />
+        <Entry Placeholder="Enter Separator Name..."
+               x:Name="nameEntry"/>
+        <Picker x:Name="afterBeforePicker"
+                Title="Select position">
+        </Picker>
+        <Picker x:Name="optionsPicker"
+                Title="Select Relative To Separator">
+            
+        </Picker>
+        <Button Text="Add Separator" 
+                Clicked="OnClicked_AddSeparator"
+                x:Name="confirmButton"/>
+    </VerticalStackLayout>
+</ContentPage>

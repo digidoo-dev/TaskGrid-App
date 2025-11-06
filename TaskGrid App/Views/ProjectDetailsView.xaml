@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskGrid_App.Views.ProjectDetailsView"
+             Title="Project Details">
+    <ScrollView Padding="20">
+        <VerticalStackLayout>
+            <Label 
+                Text="Welcome to Project Details View!"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                FontSize="Large"
+                x:Name="projectNameLabel" />
+            <Label Text="No project selected!" 
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   x:Name="testLabel" />
+            <FlexLayout Direction="Row"
+                        Wrap="Wrap"
+                        JustifyContent="Start"
+                        x:Name="ownerOptionsLayout">
+                <Button Margin="5" 
+                        Text="Add Member" 
+                        Clicked="OnClicked_AddMember"/>
+                <Button Margin="5"
+                        Text="Add Separator" 
+                        Clicked="OnClicked_AddSeparator"/>
+                <Button Margin="5"
+                        Text="Add Header"
+                        x:Name="addHeaderButton"
+                        Clicked="OnClicked_AddHeader"/>
+                <Button Margin="5"
+                        Text="Add Task"
+                        x:Name="addTaskButton" 
+                        Clicked="OnClicked_AddTask"/>
+            </FlexLayout>
+            <FlexLayout JustifyContent="SpaceAround" 
+                        Wrap="Wrap"
+                        Direction="Row"
+                        Margin="0,10,0,0"
+                        x:Name="projectHeaderContainer">
+                <VerticalStackLayout MaximumWidthRequest="200">
+                    <Label Text="Owner"
+                           FontSize="Medium"
+                           FontAttributes="Bold"/>
+                    <Label Text="" 
+                           x:Name="projectOwnerNameLabel"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout MaximumWidthRequest="200">
+                    <Label Text="Members"
+                           FontSize="Medium"                          
+                           FontAttributes="Bold"/>
+                    <FlexLayout Wrap="Wrap"
+                                Direction="Column"
+                                x:Name="projectMembersLayout">
+
+                    </FlexLayout>
+                </VerticalStackLayout>
+            </FlexLayout>
+            <VerticalStackLayout x:Name="projectGridHolder">
+            
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

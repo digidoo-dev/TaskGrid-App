@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskGrid_App.Views.CreateNewProjectView"
+             Title="Create New Project">
+
+    <VerticalStackLayout Padding="20">
+        <Label Text=""
+               FontSize="Title"
+               x:Name="titleLabel"/>
+        <Grid RowDefinitions="auto, auto"
+              ColumnDefinitions="auto,*"
+              MaximumWidthRequest="500">
+            <Label Grid.Row="0" 
+                   Grid.Column="0"
+                   Text="Project Name"
+                   VerticalOptions="Center"/>
+            <Entry Grid.Row="0"
+                   Grid.Column="1"
+                   x:Name="projectNameEntry"/>
+            <Button Grid.Row="1"
+                    Grid.Column="1"
+                    Text="Create"
+                    Clicked="OnClicked_CreateProject"
+                    x:Name="createProjectButton"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TaskGrid_App.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TaskGrid_App"
+    xmlns:views="clr-namespace:TaskGrid_App.Views"
+    Title="TaskGrid App"
+    Shell.BackgroundColor="{StaticResource Primary}"
+    Shell.TitleColor="{StaticResource White}"
+    Shell.TabBarBackgroundColor="{StaticResource PrimaryDark}"
+    Shell.TabBarTitleColor="{StaticResource Black}"
+    Shell.TabBarUnselectedColor="{StaticResource Gray400}"
+    FlyoutBackground="{StaticResource Gray600}">
+
+    <FlyoutItem Title="Projects">
+        <Tab Title="My Projects">
+            <ShellContent
+                Title="My Projects"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Title="New Project">
+            <ShellContent
+                Title="New Project"
+                ContentTemplate="{DataTemplate views:CreateNewProjectView}"
+                Route="CreateNewProjectView" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Project Details">
+        <Tab Title="Project Grid">
+            <ShellContent
+                Title="Project Grid"
+                ContentTemplate="{DataTemplate views:ProjectDetailsView}"
+                Route="ProjectDetailsView" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Log out">
+        <ShellContent 
+            ContentTemplate="{DataTemplate views:LogoutView}"
+            Route="LogoutView" />
+    </FlyoutItem>
+
+</Shell>

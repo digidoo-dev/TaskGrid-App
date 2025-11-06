@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskGrid_App.Views.LoginOrRegisterView"
+             Title="Login or Create an Account"
+             BackgroundColor="#425f6f">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalOptions"
+                    Value="Center"/>
+            <Setter Property="TextColor"
+                    Value="{StaticResource White}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <FlexLayout Direction="Row" 
+                Wrap="Wrap"
+                AlignItems="Center"
+                JustifyContent="Center"
+                VerticalOptions="Center">
+        <Grid MaximumWidthRequest="500">
+            <Image Source="taskgridlogo.jpg"
+               Aspect="AspectFit"
+               HorizontalOptions="Fill"/>
+        </Grid>
+        <VerticalStackLayout MinimumWidthRequest="350">
+            <Grid RowDefinitions="auto,auto,auto,auto"
+                  ColumnDefinitions="auto,*"
+                  MaximumWidthRequest="1000">
+                <Label Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       Text="Please Log In" 
+                       Margin="20"
+                       FontSize="Title"
+                       x:Name="titleLabel"/>
+                <Label Grid.Row="1"
+                       Text="Email" />
+                <Entry Grid.Row="1"
+                       Grid.Column="1"
+                       Text=""
+                       x:Name="emailEntry"/>
+                <Label Grid.Row="2"
+                       Text="Password" />
+                <Entry Grid.Row="2"
+                       Grid.Column="1"
+                       Text=""
+                       IsPassword="True"
+                       x:Name="passwordEntry"/>
+                <Button Grid.Row="3"
+                        Grid.Column="1"
+                        WidthRequest="150"
+                        HorizontalOptions="Start"
+                        Clicked="LoginAttempt"
+                        Text="Login" />
+            </Grid>
+
+            <VerticalStackLayout HorizontalOptions="Center"
+                         Margin="0,50,0,0"
+                         Spacing="10">
+                <Label Text="Don't have an account?" />
+                <Button Text="Register Now" 
+                Clicked="OpenRegisterWebsite"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </FlexLayout>
+    
+</ContentPage>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskGrid_App.Views.AddTaskView"
+             Title="Add Task">
+    <VerticalStackLayout VerticalOptions="Center" 
+                         Padding="20"
+                         Spacing="10"
+                         MaximumWidthRequest="500">
+        <Label 
+            Text=""
+            x:Name="titleLabel"/>
+
+        <Picker Title="Choose Separator"
+                x:Name="separatorPicker">
+
+        </Picker>
+
+        <Picker Title="Choose Header"
+                x:Name="headerPicker">
+
+        </Picker>
+
+        <Label Text="Task Name"/>
+        <Entry Placeholder="Enter task name..." 
+               x:Name="taskNameEntry"/>
+        <Label Text="Task Description (Optional)" />
+        <Entry Placeholder="Enter task description..."
+               x:Name="taskDescriptionEntry"/>
+        <Button Text="Add Task"
+                x:Name="confirmButton"
+                Clicked="OnClicked_AddTask"/>
+    </VerticalStackLayout>
+</ContentPage>

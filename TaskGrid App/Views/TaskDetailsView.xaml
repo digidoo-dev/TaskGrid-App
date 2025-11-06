@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskGrid_App.Views.TaskDetailsView"
+             Title="Task Details">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalOptions"
+                    Value="Center" />
+            <Setter Property="TextColor"
+                    Value="{StaticResource White}"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout VerticalOptions="Center">
+        <Label 
+            Text=""
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            x:Name="titleLabel" />
+        <Border Stroke="{StaticResource Black}"
+                StrokeThickness="5"
+                BackgroundColor="{StaticResource Gray900}"
+                HorizontalOptions="Center">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20"/>
+            </Border.StrokeShape>
+            <Grid RowDefinitions="auto,auto,auto,auto"
+                  ColumnDefinitions="auto,*"
+                  MaximumWidthRequest="700">
+
+                <Label Grid.Row="0" 
+                       Grid.Column="0"
+                       FontSize="Title"
+                       HorizontalOptions="End"
+                       Text="Project" />
+                <Label Grid.Row="0"
+                       Grid.Column="1"
+                       FontSize="Body"
+                       x:Name="projectNameLabel" />
+
+                <Label Grid.Row="1" 
+                       Grid.Column="0"
+                       FontSize="Title"
+                       HorizontalOptions="End"
+                       Text="Task" />
+                <Label Grid.Row="1"
+                       Grid.Column="1"
+                       FontSize="Body"
+                       x:Name="taskNameLabel" />
+
+                <Label Grid.Row="2" 
+                       Grid.Column="0"
+                       HorizontalOptions="End"
+                       FontSize="Title"
+                       Text="Description" />
+                <Label Grid.Row="2"
+                       Grid.Column="1"
+                       FontSize="Body"
+                       x:Name="taskDescriptionLabel" />
+
+                <Label Grid.Row="3" 
+                       Grid.Column="0"
+                       HorizontalOptions="End"
+                       FontSize="Title"
+                       Text="Assigned to" />
+                <Label Grid.Row="3"
+                       Grid.Column="1"
+                       FontSize="Body"
+                       x:Name="assignedToLabel" />
+
+            </Grid>
+        </Border>
+        <Button Text="Complete"
+                Margin="20"
+                IsVisible="False"
+                MaximumWidthRequest="400"
+                x:Name="completeButton"
+                Clicked="OnClicked_CompleteTask"/>
+    </VerticalStackLayout>
+</ContentPage>

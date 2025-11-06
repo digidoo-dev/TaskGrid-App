@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskGrid_App.Views.ConfirmTaskCompletionView"
+             Title="Confirm Task Completion">
+    <VerticalStackLayout VerticalOptions="Center">
+        <Label 
+            Text="You are about to complete this task"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="Large"
+            Margin="20"
+            x:Name="titleLabel"/>
+        <Button 
+            Text="Confirm"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            x:Name="confirmButton"
+            Clicked="OnClicked_Confirm"/>
+    </VerticalStackLayout>
+</ContentPage>
